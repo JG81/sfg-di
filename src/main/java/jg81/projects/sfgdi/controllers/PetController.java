@@ -1,16 +1,15 @@
-package guru.springframework.sfgdi.controllers;
+package jg81.projects.sfgdi.controllers;
 
-import guru.springframework.sfgdi.services.PetService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
-/**
- * Created by jt on 12/28/19.
- */
+import jg81.projects.pets.PetService;
+
 @Controller
 public class PetController {
 
     private final PetService petService;
-
+    @Autowired
     public PetController(PetService petService) {
         this.petService = petService;
     }

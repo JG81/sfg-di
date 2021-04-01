@@ -1,4 +1,4 @@
-package guru.springframework.sfgdi.services;
+package jg81.projects.sfgdi.services;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.*;

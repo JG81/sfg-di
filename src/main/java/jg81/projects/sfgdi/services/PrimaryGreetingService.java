@@ -1,4 +1,4 @@
-package guru.springframework.sfgdi.services;
+package jg81.projects.sfgdi.services;
 
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
@@ -6,8 +6,7 @@ import org.springframework.stereotype.Service;
 /**
  * Created by jt on 12/27/19.
  */
-@Primary
-@Service
+
 public class PrimaryGreetingService implements GreetingService {
 
     @Override
