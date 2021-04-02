@@ -1,15 +1,21 @@
-package jg81.projects.sfgdi.FakeDataSource;
+package jg81.projects.sfgdi.config;
 
-public class FakeDataSource {
-	private String userName;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.Configuration;
+
+@ConfigurationProperties("jg81")
+@Configuration
+public class SfgConfiguration {
+	
+	private String username;
 	private String password;
 	private String jdbcurl;
 	
 	public String getUserName() {
-		return userName;
+		return username;
 	}
 	public void setUserName(String userName) {
-		this.userName = userName;
+		this.username = userName;
 	}
 	public String getPassword() {
 		return password;
@@ -23,4 +29,5 @@ public class FakeDataSource {
 	public void setJdbcurl(String jdbcurl) {
 		this.jdbcurl = jdbcurl;
 	}
+
 }

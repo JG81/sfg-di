@@ -1,9 +1,45 @@
 ---
+#declara los perfiles activos en Spring
 spring:
   profiles:    active:    - dog
     - EN
+    - prod
+#Declara los valores para las propiedades de jg81 para un perfil por defecto    
+jg81:
+  username: YML_user
+  password: YML_pass
+  jdbcurl: YML_url
+  
+---
+#Declara perfil prod, y los valores específicos de las propiedades en este perfil
+spring:
+    profiles: prod
+jg81:
+  username: YML_PROD_user
+  password: YML_PROD_pass
+  jdbcurl: YML_PROD_url
+
+---
+#Declara perfil dev, y los valores específicos de las propiedades en este perfil
+spring:  profiles: dev
   
 jg81:
-  username: YMLuser
-  password: YMLpass
-  jdbcurl: YMLURL
+  jdbcurl: YML_DEV_url
+  username: YML_DEV_user
+  password: YML_DEV_pass
+  
+---
+#Declara perfil qa, y los valores específicos de las propiedades en este perfil
+spring:
+  profiles: qa
+  
+jg81:
+  jdbcurl: YML_QA_url
+  username: YML_QA_user
+  password: YML_QA_pass
+  
+# Es importante recordar que en los archivos yml podemos declarar varios perfiles diferentes.
+# El uso del separador --- es equivalente a declararlos en archivos diferentes (lo que podría
+# hacerse sin ningún problema, solo hay que seguir la convención  de nombre: application-PROFILE_NAME.yml)
+# Esta convención de nombre también es válida para la creación de archivos de propiedades con perfiles basados 
+# en .properties

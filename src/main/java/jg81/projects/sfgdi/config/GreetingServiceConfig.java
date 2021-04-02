@@ -1,12 +1,12 @@
 package jg81.projects.sfgdi.config;
 
-import org.springframework.beans.factory.annotation.Value;
+
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.ImportResource;
 import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.Profile;
-import org.springframework.context.annotation.PropertySource;
+
 
 import jg81.projects.pets.PetService;
 import jg81.projects.pets.PetServiceFactory;
@@ -20,19 +20,18 @@ import jg81.projects.sfgdi.services.PropertyInjectedGreetingService;
 import jg81.projects.sfgdi.services.SetterInjectedGreetingService;
 import jg81.projects.sfgdi.services.PrimaryGreetingService;
 
+@EnableConfigurationProperties(ConstructorConfig.class)
 @Configuration
 public class GreetingServiceConfig {
 	
 	@Bean
-	FakeDataSource fakeDataSource(@Value("${jg81.username}") String userName, 
-								  @Value("${jg81.password}") String password, 
-								  @Value("${jg81.jdbcurl}") String jdbcurl) {
+	FakeDataSource fakeDataSource(ConstructorConfig constructorConfig) {
 		
 		FakeDataSource fakeDataSource= new FakeDataSource();
 
-		fakeDataSource.setUserName(userName);
-		fakeDataSource.setPassword(password);
-		fakeDataSource.setJdbcurl(jdbcurl);
+		fakeDataSource.setUserName(constructorConfig.getUsername());
+		fakeDataSource.setPassword(constructorConfig.getPassword());
+		fakeDataSource.setJdbcurl(constructorConfig.getJdbcurl());
 	
 		return fakeDataSource;
 	}
