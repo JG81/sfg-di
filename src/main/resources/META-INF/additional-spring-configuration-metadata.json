@@ -1,0 +1,17 @@
+{"properties": [
+  {
+    "name": "jg81.jdbcurl",
+    "type": "java.lang.String",
+    "description": "A description for 'jg81.jdbcurl'"
+  },
+  {
+    "name": "jg81.password",
+    "type": "java.lang.String",
+    "description": "A description for 'jg81.password'"
+  },
+  {
+    "name": "jg81.username",
+    "type": "java.lang.String",
+    "description": "A description for 'jg81.username'"
+  }
+]}
